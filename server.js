@@ -31,7 +31,9 @@ const transporter = nodemailer.createTransport({
 const generateOtp = () => {
   return Math.floor(100000 + Math.random() * 900000).toString();
 };
-
+app.get("/", (req, res) => {
+  res.send("Server is running successfully 🚀");
+});
 /* =========================
    SEND OTP ROUTE
 ========================= */
@@ -97,9 +99,7 @@ app.post("/verify-otp", (req, res) => {
   res.json({ message: "OTP verified successfully" });
 });
 
-/* =========================
-   SERVER START
-========================= */
+
 /* =========================
    SERVER START (RENDER READY)
 ========================= */
